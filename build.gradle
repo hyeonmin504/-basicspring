@@ -7,6 +7,14 @@ plugins {
 group = 'hello'
 version = '0.0.1-SNAPSHOT'
 
+//lombok 설정 추가
+//intellj idea - settings - annotation process 켜기 , plug in lombok 설치
+configurations{
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 java {
 	sourceCompatibility = '17'
 }
@@ -17,6 +25,14 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	//lombok 라이브러리 추가
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
