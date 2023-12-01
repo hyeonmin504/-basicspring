@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class SingletonWithPrototypeTest1 {
+public class SingletonprototypeTest {
 
     @Test
     void prototypeFine() {
