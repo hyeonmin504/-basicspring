@@ -3,6 +3,7 @@ package hello.core.scope;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
@@ -40,6 +41,9 @@ public class SingletonprototypeTest {
     @Scope("singleton")
     static class ClientBean{
         private final PrototypeBean prototypeBean; //생성시점에 주입
+
+        @Autowired
+        private ObjectProvider<PrototypeBean> prototypeBeanProvider;
 
         @Autowired
         ClientBean(PrototypeBean prototypeBean) {
